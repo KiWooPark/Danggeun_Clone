@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Popup View Controller-->
+        <scene sceneID="Grq-Jm-HS5">
+            <objects>
+                <viewController storyboardIdentifier="photoPopupView" modalPresentationStyle="fullScreen" id="mah-LP-xdi" customClass="PhotoPopupViewController" customModule="Danggeun_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pz7-7K-wU9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-iX-BiI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCR-eh-ODD">
+                                <rect key="frame" x="0.0" y="373" width="414" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NsR-eN-u6T">
+                                        <rect key="frame" x="20" y="20" width="374" height="110"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP6-YG-rr4">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="47.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2q-ez-tmi">
+                                                <rect key="frame" x="0.0" y="62.5" width="374" height="47.5"/>
+                                                <color key="backgroundColor" red="0.93072086570000001" green="0.48982542750000002" blue="0.20381253960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="닫기"/>
+                                                <connections>
+                                                    <action selector="tapCloseButton:" destination="mah-LP-xdi" eventType="touchUpInside" id="TLj-PQ-hMW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="NsR-eN-u6T" firstAttribute="top" secondItem="FCR-eh-ODD" secondAttribute="top" constant="20" id="3F6-t4-odM"/>
+                                    <constraint firstAttribute="trailing" secondItem="NsR-eN-u6T" secondAttribute="trailing" constant="20" id="75G-Lc-XFt"/>
+                                    <constraint firstAttribute="bottom" secondItem="NsR-eN-u6T" secondAttribute="bottom" constant="20" id="Rh5-bR-dw1"/>
+                                    <constraint firstItem="NsR-eN-u6T" firstAttribute="leading" secondItem="FCR-eh-ODD" secondAttribute="leading" constant="20" id="UDg-9o-T1f"/>
+                                    <constraint firstAttribute="height" constant="150" id="V2b-KI-xJS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LU6-Np-aZ9"/>
+                        <constraints>
+                            <constraint firstItem="FCR-eh-ODD" firstAttribute="centerX" secondItem="Pz7-7K-wU9" secondAttribute="centerX" id="0qZ-O6-GSS"/>
+                            <constraint firstItem="FCR-eh-ODD" firstAttribute="centerY" secondItem="Pz7-7K-wU9" secondAttribute="centerY" id="99H-6K-UzG"/>
+                            <constraint firstItem="2EX-iX-BiI" firstAttribute="top" secondItem="Pz7-7K-wU9" secondAttribute="top" id="CS1-fi-ZIB"/>
+                            <constraint firstItem="2EX-iX-BiI" firstAttribute="trailing" secondItem="LU6-Np-aZ9" secondAttribute="trailing" id="EaX-m2-jJ5"/>
+                            <constraint firstAttribute="bottom" secondItem="2EX-iX-BiI" secondAttribute="bottom" id="G7R-AX-ysn"/>
+                            <constraint firstItem="2EX-iX-BiI" firstAttribute="leading" secondItem="LU6-Np-aZ9" secondAttribute="leading" id="Jz1-3W-08t"/>
+                            <constraint firstItem="FCR-eh-ODD" firstAttribute="leading" secondItem="LU6-Np-aZ9" secondAttribute="leading" id="eFg-Pk-9CG"/>
+                            <constraint firstItem="LU6-Np-aZ9" firstAttribute="trailing" secondItem="FCR-eh-ODD" secondAttribute="trailing" id="x0y-xt-1x8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="k2q-ez-tmi" id="YI8-R5-dk1"/>
+                        <outlet property="popupLabel" destination="pP6-YG-rr4" id="msu-le-xqn"/>
+                        <outlet property="popupView" destination="FCR-eh-ODD" id="8on-IX-Gzg"/>
+                        <outlet property="visualView" destination="2EX-iX-BiI" id="T3d-P7-wlI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGS-rl-gVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="268"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Address Popup View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="addressPopupVC" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="AddressPopupViewController" customModule="Danggeun_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEy-ow-sfX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="tapBackgroundButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="k9x-s7-bdS"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gd1-MJ-EFG">
+                                <rect key="frame" x="0.0" y="44" width="207" height="146"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ppC-Gm-94Q">
+                                        <rect key="frame" x="20" y="15" width="167" height="116"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXV-or-6QG">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="동네 이름">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tapFirstAddressButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5ge-1a-UJf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWS-6W-0gK">
+                                                <rect key="frame" x="0.0" y="42" width="167" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="동네 이름">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tapSecondAddressButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vkt-Ix-yyW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHY-NH-KLM">
+                                                <rect key="frame" x="0.0" y="84" width="167" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="내 동네 설정하기">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tapAddressSettingButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2An-B7-ncW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ppC-Gm-94Q" secondAttribute="trailing" constant="20" id="4rE-Qa-LFL"/>
+                                    <constraint firstItem="ppC-Gm-94Q" firstAttribute="leading" secondItem="gd1-MJ-EFG" secondAttribute="leading" constant="20" id="6rR-j5-gwH"/>
+                                    <constraint firstItem="ppC-Gm-94Q" firstAttribute="top" secondItem="gd1-MJ-EFG" secondAttribute="top" constant="15" id="UQ2-Bp-3Eb"/>
+                                    <constraint firstAttribute="bottom" secondItem="ppC-Gm-94Q" secondAttribute="bottom" constant="15" id="qIy-pu-G2Y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="FEy-ow-sfX" secondAttribute="bottom" id="0C8-uZ-dNl"/>
+                            <constraint firstItem="FEy-ow-sfX" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="KmF-94-hSE"/>
+                            <constraint firstItem="gd1-MJ-EFG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Pcg-P7-kIv"/>
+                            <constraint firstItem="FEy-ow-sfX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="U7F-jj-7Hg"/>
+                            <constraint firstItem="gd1-MJ-EFG" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.5" id="ZJQ-mm-j0s"/>
+                            <constraint firstItem="FEy-ow-sfX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nGG-7z-JEo"/>
+                            <constraint firstItem="gd1-MJ-EFG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vIa-yM-NgB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressListView" destination="gd1-MJ-EFG" id="tna-5Y-ZFO"/>
+                        <outlet property="addressListViewLeading" destination="vIa-yM-NgB" id="aMT-2V-w3b"/>
+                        <outlet property="addressListViewTop" destination="Pcg-P7-kIv" id="Y6c-lH-h0r"/>
+                        <outlet property="firstAddressButton" destination="RXV-or-6QG" id="OrA-Rh-9oj"/>
+                        <outlet property="secondAddressButton" destination="xWS-6W-0gK" id="Pe1-oF-dJj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15.942028985507248" y="98.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

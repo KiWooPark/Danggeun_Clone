@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--홈-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="Danggeun_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSm-Uu-iX4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="155" id="q11-vk-zWW">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="155"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q11-vk-zWW" id="Y3A-Fb-SkG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="hgZ-0m-jR6"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="2yG-XU-MLx"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wRN-BB-ALG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxz-D6-eSZ">
+                                <rect key="frame" x="344" y="743" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2LK-Hk-RaA"/>
+                                    <constraint firstAttribute="width" constant="50" id="N6N-f8-vrH"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapPlusButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Dws-Xf-osE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wRN-BB-ALG" firstAttribute="leading" secondItem="bSm-Uu-iX4" secondAttribute="leading" id="69S-4F-Bb3"/>
+                            <constraint firstItem="bSm-Uu-iX4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="e7J-Kk-qe2"/>
+                            <constraint firstItem="wRN-BB-ALG" firstAttribute="bottom" secondItem="bSm-Uu-iX4" secondAttribute="bottom" id="hAB-B8-9UY"/>
+                            <constraint firstItem="wRN-BB-ALG" firstAttribute="trailing" secondItem="bSm-Uu-iX4" secondAttribute="trailing" id="irR-Nf-Fis"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bSm-Uu-iX4" secondAttribute="bottom" id="j0i-p3-sCw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Uxz-D6-eSZ" secondAttribute="bottom" constant="20" id="kT1-wo-JhZ"/>
+                            <constraint firstItem="wRN-BB-ALG" firstAttribute="top" secondItem="bSm-Uu-iX4" secondAttribute="top" id="lgz-ra-5Rc"/>
+                            <constraint firstItem="bSm-Uu-iX4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="wvi-xK-k21"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bSm-Uu-iX4" secondAttribute="trailing" id="yXi-EI-yoN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Uxz-D6-eSZ" secondAttribute="trailing" constant="20" id="zYI-Iw-cl3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="홈" image="homeIcon" selectedImage="homeIconFill" id="wVh-HJ-bxm"/>
+                    <navigationItem key="navigationItem" id="LmW-DL-CgU">
+                        <barButtonItem key="backBarButtonItem" title=" " id="akb-BW-kEg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="lTO-OI-0Ab">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="dummyData:" destination="Y6W-OH-hqX" id="6yx-gf-Ad8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="indicatorView" destination="wRN-BB-ALG" id="zC7-pF-vGo"/>
+                        <outlet property="plusButton" destination="Uxz-D6-eSZ" id="T5L-Nx-nbi"/>
+                        <outlet property="productListTableView" destination="bSm-Uu-iX4" id="NVX-3J-bke"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="73.660714285714278"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="Ufu-u4-l67">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNVC" id="N5k-G4-cMQ" customClass="MainNavigationController" customModule="Danggeun_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pxg-Yx-ta3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBarAppearance key="standardAppearance" backgroundImage="whiteBackgroundImage">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance" backgroundImage="whiteBackgroundImage">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1MX-VH-fad">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="sP3-ge-Cag"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Yp-KO-ahS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="73.660714285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="homeIcon" width="32.5" height="32.5"/>
+        <image name="homeIconFill" width="32.5" height="32.5"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="whiteBackgroundImage" width="400" height="400"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
