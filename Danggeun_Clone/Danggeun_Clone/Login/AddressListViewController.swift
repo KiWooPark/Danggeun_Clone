@@ -19,7 +19,7 @@ protocol AddressListViewControllerDelegate: AnyObject {
 
 // MARK: [Class or Struct] ----------
 class AddressListViewController: UIViewController {
-
+    
     // MARK: [@IBOutlet] ----------
     @IBOutlet var findindCurrentLocationButton: UIButton!
     @IBOutlet var addressListTableView: UITableView!
@@ -27,7 +27,7 @@ class AddressListViewController: UIViewController {
     // MARK: [Let Or Var] ----------
     let db = Firestore.firestore()
     weak var delegate: AddressListViewControllerDelegate?
-
+    
     // 뷰컨트롤러 타입 체크
     var vcType = VCType.addressVC
     
@@ -41,13 +41,13 @@ class AddressListViewController: UIViewController {
     
     var allAddressList = [[AddressModel]]()
     var addressList = [[AddressModel]]()
-   
+    
     var headerString = "근처 동네"
     
     // MARK: [Override] ----------
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         configureNavigationBar()
         
         addressListTableView.keyboardDismissMode = .onDrag
@@ -89,7 +89,7 @@ class AddressListViewController: UIViewController {
             searchBar.text = ""
             headerString = "근처 동네"
         }
-
+        
         LocationManager.shared.getNaverCurrentLocation { area1, area2, area3, area4 in
             self.fetchMyCurrentLocationAddress(area1: area1, area2: area2, area3: area3, area4: area4)
         }
@@ -97,7 +97,7 @@ class AddressListViewController: UIViewController {
     
     // MARK: [Function] ----------
     func configureNavigationBar() {
-    
+        
         let container = SearchAddressContainerView()
         container.backgroundColor = .white
         
@@ -110,10 +110,10 @@ class AddressListViewController: UIViewController {
             textField.backgroundColor = .clear
             textField.placeholder = "동명(읍, 면)으로 검색 (ex. 서초동)"
         }
-    
+        
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(searchBar)
-    
+        
         searchBar.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.width.equalToSuperview()
@@ -121,7 +121,7 @@ class AddressListViewController: UIViewController {
         
         self.navigationItem.titleView = container
     }
-
+    
     private func fetchAllAddress(url: URL) {
         do {
             let data = try Data(contentsOf: url)
@@ -143,13 +143,26 @@ class AddressListViewController: UIViewController {
     func filteredAddress(text: String) {
         addressList.removeAll()
         addressList = allAddressList.filter({$0[0].address.contains(text)})
-
+        
         addressListTableView.reloadData()
     }
     
     // 현재위치로 찾기
     // 여기도 카운트로 분기 필요 2개,3개,4개
     func fetchMyCurrentLocationAddress(area1: String, area2: String, area3: String, area4: String) {
+        
+        var area1 = area1
+        var area2 = area2
+        var area3 = area3
+        var area4 = area4
+        
+        if area1 == "" || area2 == "" || area3 == "" || area4 == "" {
+            area1 = "경기도"
+            area2 = "평택시"
+            area3 = "장당동"
+            area4 = ""
+        }
+        
         addressList.removeAll()
                 
         var index = 0
