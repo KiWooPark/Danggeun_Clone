@@ -6,6 +6,9 @@
 
 개발 인원 : iOS 1명 
 
+노션 링크 : [Link](https://storm-hosta-944.notion.site/Clone-4e4d183d793441cd95d10f01288b347b?pvs=4)
+
+
 ## 💁 Service introduce
 지역 생활 커뮤니티 서비스 시장을 이끌고 있는 당근마켓 앱을 모방하여 개발함으로써 앱 개발 역량을 키우는 것을 목표로 해당 프로젝트를 기획하게 되었습니다.
 
@@ -16,3 +19,8 @@
 - Kingfisher, SnapKit
 - CoreLocation, NMapsMap
 - BSImagePicker
+
+## ⚙️ Architecture
+- MVC
+
+## 📺 Demo Video
